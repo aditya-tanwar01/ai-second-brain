@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BrainBox
+
+Your AI-powered Second Brain for notes, tasks, and intelligent productivity.
+
+BrainBox is a full-stack AI productivity application that helps users store knowledge, manage tasks, and interact with an AI assistant using their saved information.
+
+## Features
+
+- Notes: Create, edit, organize, and delete personal notes.
+- Tasks: Create, edit, complete, and delete tasks.
+- AI Assistant: Ask questions about your notes and tasks using Google Gemini.
+- AI Actions: Create notes and tasks using natural-language commands.
+- Authentication: Secure signup, login, logout, and user sessions.
+- Data Security: Supabase Row Level Security keeps user data isolated.
+- Responsive Design: Works across desktop, tablet, and mobile devices.
+- Legal Pages: Includes Privacy Policy and Terms of Service.
+
+## Tech Stack
+
+Next.js 16  
+TypeScript  
+Tailwind CSS  
+Supabase  
+PostgreSQL  
+Google Gemini  
+Git  
+GitHub  
+Vercel
+
+## How It Works
+
+User → BrainBox → Notes / Tasks / AI Assistant → Gemini AI
+
+The AI assistant can use the user's saved notes and tasks to provide contextual responses and perform supported actions.
+
+Example commands:
+
+    Create a task to finish my Python assignment
+
+    Create a note about today's meeting
+
+## Security
+
+BrainBox uses Supabase Authentication and PostgreSQL.
+
+Notes and tasks are associated with the authenticated user's `user_id`. Row Level Security policies control read, insert, update, and delete access so users can access only their own data.
+
+AI API requests are authenticated using the user's Supabase session.
+
+## Project Structure
+
+    ai-second-brain/
+    ├── app/
+    │   ├── api/
+    │   │   ├── ai/
+    │   │   └── tasks/
+    │   ├── dashboard/
+    │   ├── notes/
+    │   ├── tasks/
+    │   ├── ai/
+    │   ├── settings/
+    │   ├── login/
+    │   ├── signup/
+    │   ├── privacy/
+    │   ├── terms/
+    │   ├── page.tsx
+    │   ├── layout.tsx
+    │   └── favicon.ico
+    ├── lib/
+    │   ├── supabase.ts
+    │   └── supabase-browser.ts
+    ├── proxy.ts
+    ├── public/
+    ├── package.json
+    └── README.md
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    git clone https://github.com/aditya-tanwar01/ai-second-brain.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    cd ai-second-brain
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    npm install
 
-## Learn More
+Create a `.env.local` file:
 
-To learn more about Next.js, take a look at the following resources:
+    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+    GEMINI_API_KEY=your_gemini_api_key
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    npm run dev
 
-## Deploy on Vercel
+Open:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    http://localhost:3000
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For a production build:
+
+    npm run build
+    npm start
+
+## Main Routes
+
+    /             Landing page
+    /signup       Account creation
+    /login        User login
+    /dashboard    Main dashboard
+    /notes        Notes management
+    /tasks        Task management
+    /ai            AI Assistant
+    /settings     User settings
+    /privacy      Privacy Policy
+    /terms        Terms of Service
+
+## Deployment
+
+BrainBox is deployed using Vercel and connected to GitHub. Changes pushed to the `main` branch can automatically trigger a new production deployment.
+
+## Future Improvements
+
+- Semantic search
+- Advanced AI memory
+- Document and PDF uploads
+- Voice input
+- AI task planning
+- Calendar integration
+- Notifications
+- Team workspaces
+- Subscription plans
+- Payment integration
+- Advanced analytics
+
+## Developer
+
+Aditya Tanwar
+
+GitHub: https://github.com/aditya-tanwar01/ai-second-brain
+
+## License
+
+This project is currently intended as a personal portfolio and learning project.
+
+---
+
+BrainBox — Your AI-powered Second Brain.
